@@ -49,9 +49,14 @@ fi
 
 ## Removing eventual locks from apt ##
 locks_apt(){
-  sudo rm /var/lib/dpkg/lock-frontend
-  sudo rm /var/cache/apt/archives/lock
+  if [ -d "/var/lib/dpkg/" ] && [ -d "/var/cache/apt/archives/" ]; then
+    sudo rm /var/lib/dpkg/lock-frontend
+    sudo rm /var/cache/apt/archives/lock
+  else
+    echo "Directories not found, ignoring locks removal"
+  fi
 }
+
 
 ## Updating the repository ##
 just_apt_update(){
