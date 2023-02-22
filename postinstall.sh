@@ -60,7 +60,7 @@ sudo apt update -y
 
 ##DEB SOFTWARES TO INSTALL
 
-SOFTWARES_TO_INSTALL= (
+SOFTWARES_TO_INSTALL= 
   snapd
   winff
   ratbagd
@@ -85,7 +85,7 @@ SOFTWARES_TO_INSTALL= (
   openvpn
   software-properties-common
   php
-)
+
 
 # ---------------------------------------------------------------------- #
 
