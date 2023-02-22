@@ -16,8 +16,6 @@ URL_SYNOLOGY_DRIVE="https://global.download.synology.com/download/Utility/Synolo
 ##PATHS AND FILES
 
 DOWNLOADS_PATH="$HOME/Downloads/software"
-FILE="/home/$USER/.config/gtk-3.0/bookmarks"
-
 
 #COLORS
 
@@ -87,8 +85,6 @@ SOFTWARES_TO_INSTALL=(
    openvpn
    software-properties-common
    php
-   
- 
 )
 
 # ---------------------------------------------------------------------- #
@@ -112,7 +108,7 @@ sudo dpkg -i $DOWNLOADS_PATH/*.deb
 # Install programs in apt #
 echo -e "${GREEN}[INFO] - Installing apt packages from repository${NO_COLOR}"
 
-for software_name in ${SOFTWARES_TO_INSTALL[@]}; do
+for software_name in "${SOFTWARES_TO_INSTALL[@]}"; do
   if ! dpkg -l | grep -q $software_name; then # Only install if it is not already installed
     sudo apt install "$software_name" -y
   else
