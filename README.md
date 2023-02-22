@@ -1,4 +1,4 @@
-# automated-os-installation
+# Automated OS Installation
 Automating program installation in a Linux environment
 
 ## How to use
