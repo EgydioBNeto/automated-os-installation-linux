@@ -60,32 +60,7 @@ sudo apt update -y
 
 ##DEB SOFTWARES TO INSTALL
 
-SOFTWARES_TO_INSTALL= 
-  snapd
-  winff
-  ratbagd
-  gparted
-  gufw
-  synaptic
-  vlc
-  code
-  gnome-sushi 
-  folder-color
-  git
-  wget
-  ubuntu-restricted-extras
-  v4l2loopback-utils
-  file-roller
-  tlp
-  nodejs
-  npm
-  python3
-  python3-pip
-  default-jdk
-  openvpn
-  software-properties-common
-  php
-
+SOFTWARES_TO_INSTALL= ( "snapd" "winff" "ratbagd" "gparted" "gufw" "synaptic" "vlc" "code" "gnome-sushi" "folder-color" "git" "wget" "ubuntu-restricted-extras" "v4l2loopback-utils" "file-roller" "tlp" "nodejs" "npm" "python3" "python3-pip" "default-jdk" "openvpn" "software-properties-common" "php" )
 
 # ---------------------------------------------------------------------- #
 
