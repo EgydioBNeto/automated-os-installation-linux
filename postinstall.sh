@@ -63,23 +63,31 @@ sudo apt update -y
 ##DEB SOFTWARES TO INSTALL
 
 SOFTWARES_TO_INSTALL=(
-#   snapd
-#   winff
-#   virtualbox
-#   ratbagd
-#   gparted
-#   timeshift
-#   gufw
-#   synaptic
-#   solaar
-#   vlc
-#   code
-#   gnome-sushi 
-#   folder-color
-#   git
-#   wget
-#   ubuntu-restricted-extras
-#   v4l2loopback-utils
+   snapd
+   winff
+   ratbagd
+   gparted
+   gufw
+   synaptic
+   vlc
+   code
+   gnome-sushi 
+   folder-color
+   git
+   wget
+   ubuntu-restricted-extras
+   v4l2loopback-utils
+   file-roller
+   tlp
+   nodejs
+   npm
+   python3
+   python3-pip
+   default-jdk
+   openvpn
+   software-properties-common
+   php
+   
  
 )
 
@@ -118,18 +126,20 @@ install_flatpaks(){
 
   echo -e "${GREEN}[INFO] - Installing flatpak packages${NO_COLOR}"
 
-# flatpak install flathub com.obsproject.Studio -y
-# flatpak install flathub org.gimp.GIMP -y
-# flatpak install flathub com.spotify.Client -y
-# flatpak install flathub com.bitwarden.desktop -y
-# flatpak install flathub org.telegram.desktop -y
-# flatpak install flathub org.freedesktop.Piper -y
-# flatpak install flathub org.chromium.Chromium -y
-# flatpak install flathub org.gnome.Boxes -y
-# flatpak install flathub org.onlyoffice.desktopeditors -y
-# flatpak install flathub org.qbittorrent.qBittorrent -y
-# flatpak install flathub org.flameshot.Flameshot -y
-# flatpak install flathub org.electrum.electrum -y
+ flatpak install flathub com.spotify.Client -y
+ flatpak install flathub com.bitwarden.desktop -y
+ flatpak install flathub org.freedesktop.Piper -y
+ flatpak install flathub org.gnome.Boxes -y
+ flatpak install flathub org.onlyoffice.desktopeditors -y
+ flatpak install flathub org.qbittorrent.qBittorrent -y
+ flatpak install flathub org.flameshot.Flameshot -y
+ flatpak install flathub com.discordapp.Discord -y
+ flatpak install flathub us.zoom.Zoom -y
+ flatpak install flathub com.github.tchx84.Flatseal -y
+ flatpak install flathub com.getpostman.Postman -y
+ flatpak install flathub com.github.d4nj1.tlpui -y
+ flatpak install flathub dev.k8slens.OpenLens -y
+
 }
 
 ## Installing Snap packages ##
@@ -139,9 +149,16 @@ install_snaps(){
 echo -e "${GREEN}[INFO] - Installing snap packages${NO_COLOR}"
 
 sudo snap install authy
+sudo snap install docker
+sudo snap install aws-cli --classic
+sudo snap install google-cloud-cli --classic
+sudo snap install google-cloud-sdk --classic
+sudo snap install kontena-lens --classic
+sudo snap install azure-cli-johanburati
+sudo snap install azure-functions-core-tools-johanburati
+sudo snap install slack
 
 }
-
 
 # ----------------------------- POST-INSTALLATION ----------------------------- #
 
