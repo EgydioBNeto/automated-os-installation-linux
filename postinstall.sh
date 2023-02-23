@@ -46,16 +46,6 @@ fi
 
 # ------------------------------------------------------------------------------ #
 
-
-## Removing eventual locks from apt ##
-locks_apt(){
-
-    sudo rm -f /var/lib/dpkg/lock-frontend
-    sudo rm -f /var/cache/apt/archives/lock
-
-}
-
-
 ## Updating the repository ##
 just_apt_update(){
 sudo apt update -y
@@ -142,11 +132,8 @@ nautilus -q
 
 # -------------------------------EXECUTION----------------------------------------- #
 
-locks_apt
 internet_tests
-locks_apt
 apt_update
-locks_apt
 just_apt_update
 install_debs
 install_flatpaks
