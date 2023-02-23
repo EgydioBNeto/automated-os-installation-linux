@@ -113,6 +113,7 @@ sudo snap install azure-functions-core-tools-johanburati
 sudo snap install slack
 sudo snap install chromium
 sudo snap install terraform --classic
+sudo snap install dotnet-sdk --classic
 
 }
 
