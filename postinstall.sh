@@ -72,6 +72,7 @@ echo -e "${GREEN}[INFO] - Installing apt packages from repository${NO_COLOR}"
   apt install openvpn -y
   apt install software-properties-common -y
   apt install php -y
+  apt install dbus-x11 -y
   
 }
 ## Installing Flatpak packages ##
@@ -137,7 +138,5 @@ install_flatpaks
 install_snaps
 apt_update
 system_clean
-
 ## The End ##
-
-  echo -e "${GREEN}[INFO] - Script finished, installation complete! :)${NO_COLOR}"
+echo -e "${GREEN}[INFO] - Script finished, installation complete! :)${NO_COLOR}"
