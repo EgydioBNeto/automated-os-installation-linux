@@ -20,7 +20,7 @@ NO_COLOR='\e[0m'
 #Updating repository and doing system update
 
 apt_update(){
-  sudo apt update && sudo apt dist-upgrade -y
+  sudo apt update && sudo apt dist-upgrade && sudo service packagekit restart -y
 }
 
 # -------------------------------TESTS AND REQUIREMENTS----------------------------------------- #
@@ -47,11 +47,10 @@ sudo apt update -y
 ## Downloading and installing external programs ##
 
 install_debs(){
-
 # Install programs in apt #
 echo -e "${GREEN}[INFO] - Installing apt packages from repository${NO_COLOR}"
 
-for software_name in "${SOFTWARES_TO_INSTALL[@]}"; do
+for software_name in "$(SOFTWARES_TO_INSTALL[@])"; do
   if ! dpkg -l | grep -q $software_name; then # Only install if it is not already installed
     sudo apt install "$software_name" -y
   else
@@ -65,6 +64,7 @@ install_flatpaks(){
 
   echo -e "${GREEN}[INFO] - Installing flatpak packages${NO_COLOR}"
 
+ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo -y
  flatpak install flathub com.spotify.Client -y
  flatpak install flathub com.bitwarden.desktop -y
  flatpak install flathub org.freedesktop.Piper -y
