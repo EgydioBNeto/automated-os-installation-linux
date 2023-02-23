@@ -5,11 +5,6 @@
 # ----------------------------- VARIABLES ----------------------------- #
 set -e
 
-##URLS
-
-URL_GOOGLE_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-
-
 ##DEB SOFTWARES TO INSTALL
 SOFTWARES_TO_INSTALL="'snapd' 'winff' 'ratbagd' 'gparted' 'gufw' 'synaptic' 'vlc' 'code' 'gnome-sushi' 'folder-color' 'git' 'wget' 'ubuntu-restricted-extras' 'v4l2loopback-utils' 'file-roller' 'tlp' 'nodejs' 'npm' 'python3' 'python3-pip' 'default-jdk' 'openvpn' 'software-properties-common' 'php'"
 
@@ -56,11 +51,6 @@ sudo apt update -y
 ## Downloading and installing external programs ##
 
 install_debs(){
-
-echo -e "${GREEN}[INFO] - Downloading packages .deb${NO_COLOR}"
-
-mkdir "$DOWNLOADS_PATH"
-wget -c "$URL_GOOGLE_CHROME" -P "$DOWNLOADS_PATH"
 
 ## Installing .deb packages downloaded in the previous session ##
 echo -e "${GREEN}[INFO] - Installing downloaded .deb packages${NO_COLOR}"
@@ -114,6 +104,7 @@ sudo snap install kontena-lens --classic
 sudo snap install azure-cli-johanburati
 sudo snap install azure-functions-core-tools-johanburati
 sudo snap install slack
+sudo snap install chromium
 
 }
 
