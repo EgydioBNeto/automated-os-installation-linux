@@ -8,9 +8,6 @@ set -e
 ##URLS
 
 URL_GOOGLE_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-URL_4K_VIDEO_DOWNLOADER="https://dl.4kdownload.com/app/4kvideodownloader_4.20.0-1_amd64.deb?source=website"
-URL_INSYNC="https://d2t3ff60b2tol4.cloudfront.net/builds/insync_3.7.2.50318-impish_amd64.deb"
-URL_SYNOLOGY_DRIVE="https://global.download.synology.com/download/Utility/SynologyDriveClient/3.0.3-12689/Ubuntu/Installer/x86_64/synology-drive-client-12689.x86_64.deb"
 
 
 ##DEB SOFTWARES TO INSTALL
@@ -73,10 +70,7 @@ install_debs(){
 echo -e "${GREEN}[INFO] - Downloading packages .deb${NO_COLOR}"
 
 mkdir "$DOWNLOADS_PATH"
-wget -c "$URL_GOOGLE_CHROME"       -P "$DOWNLOADS_PATH"
-wget -c "$URL_4K_VIDEO_DOWNLOADER" -P "$DOWNLOADS_PATH"
-wget -c "$URL_INSYNC"              -P "$DOWNLOADS_PATH"
-wget -c "$URL_SYNOLOGY_DRIVE"      -P "$DOWNLOADS_PATH"
+wget -c "$URL_GOOGLE_CHROME" -P "$DOWNLOADS_PATH"
 
 ## Installing .deb packages downloaded in the previous session ##
 echo -e "${GREEN}[INFO] - Installing downloaded .deb packages${NO_COLOR}"
