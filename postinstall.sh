@@ -18,7 +18,7 @@ NO_COLOR='\e[0m'
 #Updating repository and doing system update
 
 apt_update(){
-  sudo apt update -y && sudo apt dist-upgrade -y && sudo service packagekit restart -y
+  sudo apt update && sudo apt dist-upgrade && sudo service packagekit restart -y
 }
 
 # -------------------------------TESTS AND REQUIREMENTS----------------------------------------- #
@@ -79,7 +79,7 @@ install_flatpaks(){
 
   echo -e "${GREEN}[INFO] - Installing flatpak packages${NO_COLOR}"
 
- flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo 
  flatpak install flathub com.spotify.Client -y
  flatpak install flathub com.bitwarden.desktop -y
  flatpak install flathub org.freedesktop.Piper -y
@@ -105,7 +105,6 @@ echo -e "${GREEN}[INFO] - Installing snap packages${NO_COLOR}"
 sudo snap install authy
 sudo snap install docker
 sudo snap install aws-cli --classic
-sudo snap install google-cloud-cli --classic
 sudo snap install google-cloud-sdk --classic
 sudo snap install kontena-lens --classic
 sudo snap install azure-cli-johanburati
