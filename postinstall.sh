@@ -13,6 +13,9 @@ URL_INSYNC="https://d2t3ff60b2tol4.cloudfront.net/builds/insync_3.7.2.50318-impi
 URL_SYNOLOGY_DRIVE="https://global.download.synology.com/download/Utility/SynologyDriveClient/3.0.3-12689/Ubuntu/Installer/x86_64/synology-drive-client-12689.x86_64.deb"
 
 
+##DEB SOFTWARES TO INSTALL
+SOFTWARES_TO_INSTALL="'snapd' 'winff' 'ratbagd' 'gparted' 'gufw' 'synaptic' 'vlc' 'code' 'gnome-sushi' 'folder-color' 'git' 'wget' 'ubuntu-restricted-extras' 'v4l2loopback-utils' 'file-roller' 'tlp' 'nodejs' 'npm' 'python3' 'python3-pip' 'default-jdk' 'openvpn' 'software-properties-common' 'php'"
+
 ##PATHS AND FILES
 
 DOWNLOADS_PATH="$HOME/Downloads/software"
@@ -36,7 +39,7 @@ apt_update(){
 
 # Internet conectando?
 internet_tests(){
-if ! ping -c 1 8.8.8.8 -q &> /dev/null; then
+if ! sudo ping -c 1 google.com > /dev/null; then
   echo -e "${RED}[ERROR] - Your computer does not have an Internet connection. check the network.${NO_COLOR}"
   exit 1
 else
@@ -49,12 +52,10 @@ fi
 
 ## Removing eventual locks from apt ##
 locks_apt(){
-  if [ -d "/var/lib/dpkg/" ] && [ -d "/var/cache/apt/archives/" ]; then
-    sudo rm /var/lib/dpkg/lock-frontend
-    sudo rm /var/cache/apt/archives/lock
-  else
-    echo "Directories not found, ignoring locks removal"
-  fi
+
+    sudo rm -f /var/lib/dpkg/lock-frontend
+    sudo rm -f /var/cache/apt/archives/lock
+
 }
 
 
@@ -63,8 +64,6 @@ just_apt_update(){
 sudo apt update -y
 }
 
-##DEB SOFTWARES TO INSTALL
-SOFTWARES_TO_INSTALL="snapd" "winff" "ratbagd" "gparted" "gufw" "synaptic" "vlc" "code" "gnome-sushi" "folder-color" "git" "wget" "ubuntu-restricted-extras" "v4l2loopback-utils" "file-roller" "tlp" "nodejs" "npm" "python3" "python3-pip" "default-jdk" "openvpn" "software-properties-common" "php"
 # ---------------------------------------------------------------------- #
 
 ## Downloading and installing external programs ##
