@@ -5,8 +5,6 @@
 # ----------------------------- VARIABLES ----------------------------- #
 set -e
 
-##DEB SOFTWARES TO INSTALL
-SOFTWARES_TO_INSTALL="'snapd' 'winff' 'ratbagd' 'gparted' 'gufw' 'synaptic' 'vlc' 'code' 'gnome-sushi' 'folder-color' 'git' 'wget' 'ubuntu-restricted-extras' 'v4l2loopback-utils' 'file-roller' 'tlp' 'nodejs' 'npm' 'python3' 'python3-pip' 'default-jdk' 'openvpn' 'software-properties-common' 'php'"
 
 #COLORS
 
@@ -50,14 +48,31 @@ install_debs(){
 # Install programs in apt #
 echo -e "${GREEN}[INFO] - Installing apt packages from repository${NO_COLOR}"
 
-for software_name in "$(SOFTWARES_TO_INSTALL[@])"; do
-  if ! dpkg -l | grep -q $software_name; then # Only install if it is not already installed
-    sudo apt install "$software_name" -y
-  else
-    echo "[INSTALLED] - $software_name"
-  fi
-done
-
+  apt install snapd -y 
+  apt install winff -y
+  apt install ratbagd -y
+  apt install gparted -y
+  apt install gufw -y
+  apt install synaptic -y
+  apt install vlc -y
+  apt install code -y
+  apt install gnome-sushi -y
+  apt install folder-color -y
+  apt install git -y
+  apt install wget -y
+  apt install ubuntu-restricted-extras -y
+  apt install v4l2loopback-utils -y
+  apt install file-roller -y
+  apt install tlp -y
+  apt install nodejs -y
+  apt install npm -y
+  apt install python3 -y
+  apt install python3-pip -y
+  apt install default-jdk -y
+  apt install openvpn -y
+  apt install software-properties-common -y
+  apt install php -y
+  
 }
 ## Installing Flatpak packages ##
 install_flatpaks(){
