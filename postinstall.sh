@@ -15,7 +15,7 @@ SOFTWARES_TO_INSTALL="'snapd' 'winff' 'ratbagd' 'gparted' 'gufw' 'synaptic' 'vlc
 
 ##PATHS AND FILES
 
-DOWNLOADS_PATH="$HOME/Downloads/software"
+DOWNLOADS_PATH="softwares"
 
 #COLORS
 
