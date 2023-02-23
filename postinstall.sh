@@ -8,10 +8,6 @@ set -e
 ##DEB SOFTWARES TO INSTALL
 SOFTWARES_TO_INSTALL="'snapd' 'winff' 'ratbagd' 'gparted' 'gufw' 'synaptic' 'vlc' 'code' 'gnome-sushi' 'folder-color' 'git' 'wget' 'ubuntu-restricted-extras' 'v4l2loopback-utils' 'file-roller' 'tlp' 'nodejs' 'npm' 'python3' 'python3-pip' 'default-jdk' 'openvpn' 'software-properties-common' 'php'"
 
-##PATHS AND FILES
-
-DOWNLOADS_PATH="softwares"
-
 #COLORS
 
 RED='\e[1;91m'
@@ -51,10 +47,6 @@ sudo apt update -y
 ## Downloading and installing external programs ##
 
 install_debs(){
-
-## Installing .deb packages downloaded in the previous session ##
-echo -e "${GREEN}[INFO] - Installing downloaded .deb packages${NO_COLOR}"
-sudo dpkg -i $DOWNLOADS_PATH/*.deb
 
 # Install programs in apt #
 echo -e "${GREEN}[INFO] - Installing apt packages from repository${NO_COLOR}"
