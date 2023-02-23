@@ -18,7 +18,7 @@ NO_COLOR='\e[0m'
 #Updating repository and doing system update
 
 apt_update(){
-  sudo apt update && sudo apt dist-upgrade && sudo service packagekit restart -y
+  sudo apt update -y && sudo apt dist-upgrade -y && sudo service packagekit restart -y
 }
 
 # -------------------------------TESTS AND REQUIREMENTS----------------------------------------- #
