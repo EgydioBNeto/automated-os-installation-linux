@@ -73,6 +73,7 @@ echo -e "${GREEN}[INFO] - Installing apt packages from repository${NO_COLOR}"
   apt install software-properties-common -y
   apt install php -y
   apt install dbus-x11 -y
+  apt install titlix -y
   
 }
 ## Installing Flatpak packages ##
